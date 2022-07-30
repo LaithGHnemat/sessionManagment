@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Welcome</title>
+  <link th:href="@{/css/we.css}" rel="stylesheet">
+
+
+</head>
+<body>
+<div class="tbl-header">
+    <h1>we are inside the welcome page</h1>
+
+  Username <p th:text="${username}"></p>
+  Password <p th:text="${password}"></p>
+
+  <nav>
+    <ul>
+      <li>
+        <a th:href="@{/sessions}" style="color: goldenrod;text-decoration: none;">sessions</a>
+        <span></span><span></span><span></span><span></span>
+      </li>
+      <li>
+        <a th:href="@{/addNew}"  style="color: goldenrod;text-decoration: none;">Add Session</a>
+        <span></span><span></span><span></span><span></span>
+      </li>
+      <li>
+
+        <a th:href="@{/logOff}"  style="color: goldenrod;text-decoration: none;">LogOut</a>
+        <span></span><span></span><span></span><span></span>
+      </li>
+      <li>
+        contact
+        <span></span><span></span><span></span><span></span>
+      </li>
+    </ul>
+  </nav>
+
+
+
+
+
+
+
+
+</div>
+<script >
+
+ function checkSession() {
+	 var st = $("#sessionS").val();
+
+	    $.ajax({
+	        url: '/check',
+	        type: 'GET',
+	        success: function(data) {
+	        	window.location.assign('http://localhost:8080/login');
+	        }
+	    });
+	}
+
+	$(document).ready(function() {
+	    setInterval(checkSession, 5000);
+	});
+
+
+  </script>
+</body>
+</html>

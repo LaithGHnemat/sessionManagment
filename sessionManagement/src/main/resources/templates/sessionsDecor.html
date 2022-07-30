@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>the </title>
+    <link th:href="@{/css/dd.css}" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/laith.js}"></script>
+
+</head>
+<body>
+
+<a th:href="@{/welcome}" >Back</a>
+<section>
+    <!--for demo wrap-->
+    <h1>Sessions</h1>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+            <tr>
+                <th>System ID</th>
+                <th>Session ID</th>
+                <th>Username</th>
+                <th>Last Accessed Time</th>
+                <th>Creation Time</th>
+                <th>Timeout</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+
+            <thead>
+
+            </thead>
+
+            <tbody>
+            <tr th:each="s: ${sessionss}">
+                <td th:text="${s.systemID}" />
+                <td th:text="${s.sessionId}" />
+                <td th:text="${s.username}" />
+                <td th:text="${s.LastAccessedTime}" />
+                <td th:text="${s.CreationTime}" />
+                <td th:text="${s.timeout}" />
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+</section>
+
+
+<div class="made-with-love">
+    Made with
+    <i>?</i> by
+    <H1>Laith Ghnemat</H1>
+</div>
+
+
+</body>
+</html>

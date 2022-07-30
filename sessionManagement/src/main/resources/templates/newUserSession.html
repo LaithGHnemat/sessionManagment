@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>newUserSessionPage</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+</style>
+
+
+</head>
+<body>
+<div class="container">
+    <a th:href="@{/sessions}">Display All Sessions</a>
+    <a th:href="@{/sessionsDecor}">sessionsDecor</a><!--sessionss-->
+    <a th:href="@{/welcome}" >Back</a>
+    <h2>Save session</h2>
+
+    <form action="#" th:action="@{/save}" th:object="${userSession}" method="POST">
+
+        <input type="text" th:field="*{username}" placeholder="username "/>
+        <!--<input type="text" th:field="*{sessionId}" placeholder="Session ID"/>-->
+        <!--<input type="text" th:field="*{LastAccessedTime}" placeholder="LastAccessedTime"/>
+        <input type="text" th:field="*{CreationTime}" placeholder="CreationTime "/>
+        <input type="text" th:field="*{maxInactiveInterval}" placeholder="maxInactiveInterval "/>-->
+        <button type="submit" class="btn btn-info col-2">Save UserSession</button>
+    </form>
+
+</div>
+</body>
+</html>

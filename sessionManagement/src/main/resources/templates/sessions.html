@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Welcome</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+</style>
+
+
+</head>
+<body>
+<a th:href="@{/addNew}" >Add Session</a>
+<a th:href="@{/welcome}" >Back</a>
+<div class="container">
+
+    <div class="main">
+        <h3>List Sessions</h3>
+        <hr/>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>System ID</th>
+                <th>Session ID</th>
+                <th>Username</th>
+                <th>Last Accessed Time</th>
+                <th>Creation Time</th>
+                <th>Timeout</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="s: ${sessions}">
+                <td th:text="${s.systemID}" />
+                <td th:text="${s.sessionId}" />
+                <td th:text="${s.username}" />
+                <td th:text="${s.LastAccessedTime}" />
+                <td th:text="${s.CreationTime}" />
+                <td th:text="${s.timeout}" />
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>
